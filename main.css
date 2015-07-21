@@ -26,3 +26,11 @@ button:hover {
   padding: 15px;
   border: 2px black solid
 }
+
+#reset on {
+  display: block;
+}
+
+#reset off {
+  display: none;
+}
