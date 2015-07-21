@@ -1,15 +1,17 @@
 var reset = document.getElementById('reset');
 
 window.onload = function() {
-    reset.setAttribute('style', 'visibility: hidden');
+    reset.setAttribute('style', 'display: none');
 };
 
 cards.onclick = function() {
   var cardContainer = document.getElementById('container');
   cardContainer.innerHTML = '';
   displayCards();
+  createRedeal();
   cards.setAttribute('style', 'display: none');
   reset.setAttribute('style', 'visibility: visible');
+
 };
 
 reset.onclick = function() {
@@ -29,6 +31,16 @@ function displayCards() {
     var cardContainer = document.getElementById('container');
     cardContainer.appendChild(card);
     card.style.backgroundImage = "url(images/" + shuffledCards[i].suit + "-" + shuffledCards[i].card + ".png" + ")";
+  }
+}
+
+function createRedeal() {
+  var redeal = document.createElement('button');
+  if (document.body.childNodes.length <= 9 ) {
+    var btnTxt = document.createTextNode('Redeal!');
+    redeal.appendChild(btnTxt);
+    document.body.insertBefore(redeal, reset);
+    redeal.setAttribute('id', 'redeal');
   }
 }
 
