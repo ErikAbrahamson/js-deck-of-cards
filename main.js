@@ -23,7 +23,7 @@ function displayCards() {
   var deck = newDeck();
   var shuffledCards = shuffleCards(deck);
 
-  for(var i = 0; i < deck.length; i++) {
+  for (var i = 0; i < deck.length; i++) {
     var card = document.createElement('div');
     card.className = "card";
     var cardContainer = document.getElementById('container');
@@ -68,7 +68,7 @@ function shuffleCards(cardDeck) {
   var deckCopy = newDeck();
   var shuffledDeck = [];
 
-  while(deckCopy.length > 0) {
+  while (deckCopy.length > 0) {
     var randomIndex = Math.floor(Math.random() * deckCopy.length);
     shuffledDeck.push(deckCopy[randomIndex]);
     deckCopy.splice(randomIndex, 1);
