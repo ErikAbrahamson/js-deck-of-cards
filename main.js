@@ -32,9 +32,6 @@ function displayCards() {
   }
 }
 
-
-
-// Creates a deck of 52 cards
 function newDeck() {
 
   var ranks = [
@@ -67,7 +64,6 @@ function newDeck() {
   return deck;
 }
 
-// Shuffles the Deck
 function shuffleCards(cardDeck) {
   var deckCopy = newDeck();
   var shuffledDeck = [];
