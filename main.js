@@ -9,9 +9,9 @@ cards.onclick = function() {
   cardContainer.innerHTML = '';
   displayCards();
   createRedeal();
+  // button stuff
   cards.setAttribute('style', 'display: none');
   reset.setAttribute('style', 'visibility: visible');
-
 };
 
 reset.onclick = function() {
@@ -42,6 +42,11 @@ function createRedeal() {
     document.body.insertBefore(redeal, reset);
     redeal.setAttribute('id', 'redeal');
   }
+  redeal.onclick = function() {
+  var cardContainer = document.getElementById('container');
+  cardContainer.innerHTML = '';
+  displayCards();
+  };
 }
 
 function newDeck() {
@@ -64,7 +69,6 @@ function newDeck() {
 
   var suits = [ "d", "c", "s", "h"];
   var deck = [];
-
   for (var j = 0; j < suits.length; j++) {
     for (var i = 0; i < ranks.length; i++) {
       deck.push({
@@ -76,10 +80,9 @@ function newDeck() {
   return deck;
 }
 
-function shuffleCards(cardDeck) {
+function shuffleCards() {
   var deckCopy = newDeck();
   var shuffledDeck = [];
-
   while (deckCopy.length > 0) {
     var randomIndex = Math.floor(Math.random() * deckCopy.length);
     shuffledDeck.push(deckCopy[randomIndex]);
